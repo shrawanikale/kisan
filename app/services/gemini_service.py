@@ -8,7 +8,7 @@ class GeminiService:
         genai.configure(api_key=Config.GEMINI_API_KEY)
         self.model = genai.GenerativeModel('gemini-2.0-flash')
     
-    def get_response(self, user_input, history=None, language='hi-IN', call_sid=None, conversation_id=None):
+    def get_response(self, user_input, history=None, language='hi-IN', call_sid=None):
         """Get AI response with full conversation context"""
         try:
             conversation_context = ""
@@ -16,9 +16,6 @@ class GeminiService:
                 for exchange in history:
                     conversation_context += f"User: {exchange['user']}\nDiksha: {exchange['ai']}\n"
             
-            # Here you can implement logic to store and retrieve conversation context using conversation_id
-            # For example, you could use a dictionary or a database to keep track of conversations.
-
             prompt = f"""
             You are Diksha (दीक्षा), a female farming expert. Remember:
             1. You have complete memory of the conversation

@@ -102,7 +102,7 @@ def handle_call():
         history = cache.get(f'history_{call_sid}') or []
         
         if not speech_result:
-            welcome_msg = 'नमस्कार, मैं बाप कंपनी के किसान विभाग से बोल रहा हूँ, बताइए आप कैसे हैं?'
+            welcome_msg = 'नमस्ते, मैं दीक्षा हूं, आपकी कृषि सहायक। मैं आपकी कैसे मदद कर सकती हूं?'
             response = VoiceResponse()
             # Set 30 second timeout
             gather = response.gather(
